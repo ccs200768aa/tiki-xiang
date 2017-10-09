@@ -51,7 +51,7 @@ function loadBlogCategoryList() {
         $.each(res, function (index, val) {
             var categoryId = res[index].categoryId;
             var title = res[index].name;
-            var html = "<div class='dropdown'> <button type='button' class='btn dropdown-toggle' id='dropdownMenu" + (index + 1) + "' data-toggle='dropdown'>" + title
+            var html = "<div class='dropdown' style='margin-top:18px;margin-bottom: 0px'> <button type='button' class='btn dropdown-toggle' id='dropdownMenu" + (index + 1) + "' data-toggle='dropdown'>" + title
                 + "<span class='caret'></span>"
                 + " </button>"
                 + "  <ul class='dropdown-menu' role='menu' aria-labelledby='dropdownMenu" + (index + 1) + "'>"
