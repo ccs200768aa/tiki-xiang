@@ -1,0 +1,11 @@
+#artical-detail{
+    padding: 50px 50px;
+}
+
+#artical-detail h1{
+    font-size: 22px;
+    font-weight: 200;
+    color: rgba(90, 197, 226, 0.76);
+    text-align: center;
+    margin-bottom: 30px;
+}

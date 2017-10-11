@@ -7,7 +7,7 @@ $(function () {
     loadBlogCategoryList();
 });
 
-var url_prefix = "http://localhost:8990/indexManage/pipes/";
+var url_prefix = "http://localhost:8990/xiangLaManage/pipes/";
 
 function loadBlogList(categoryid) {
     var blogListUrl = url_prefix + "blog/blogArticalList"
@@ -16,6 +16,7 @@ function loadBlogList(categoryid) {
             var articalId = res[index].articalId;
             var title = res[index].title;
             var content = res[index].content;
+            var time = res[index].createtime;
             var html = "<div class='blog-info'>"
                 + " <h2>" + title + "</h2>"
                 + " <h5>±Í«©£∫</h5>"

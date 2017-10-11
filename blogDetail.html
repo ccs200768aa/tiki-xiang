@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
@@ -103,8 +104,12 @@
 <!-- MAIN CONTENT -->
 <div class="main-content">
     <div class="fluid-container">
+        <div id="artical-detail">
 
-
+        </div>
+        <div>
+            <button onclick="history.back()" style="width: 70px;height: 30px;border-radius: 5px;margin-right: 10px">&lt;&lt;返回</button>
+        </div>
     </div>
     <div class="content-wrapper">
     </div>
@@ -117,12 +122,29 @@
 </div>
 
 
-
 <script src="js/vendor/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/min/plugins.min.js"></script>
 <script src="js/min/main.min.js"></script>
 <script src="js/menu.js"></script>
+<script>
+    var src = window.location.href;
+    var articalid = src.substr(src.indexOf("?articalId=") + 11);
+    var url_prefix = "http://localhost:8990/xiangLaManage/pipes/";
+    var detailUrl = url_prefix + "blog/blogArticalDetail";
+
+    $(function () {
+        loadBlogArticalDetail(articalid);
+    });
+
+    function loadBlogArticalDetail(articalid) {
+        $.get(detailUrl + "?id=" + articalid, function (data, status) {
+            console.info(data);
+            var html = "<h1>" + data.title + "</h1><p>" + data.content + "</p>";
+            $("#artical-detail").html(html);
+        });
+    }
+</script>
 </body>
 </html>
 </html>
